@@ -4,8 +4,9 @@ package com.noirix.controller.request;
 import com.noirix.domain.Transfer;
 import lombok.Data;
 
-
 import java.sql.Timestamp;
+
+// A class to use as a request in the Rentingcontroller.
 
 @Data
 public class RentingCreateRequest {

@@ -14,12 +14,16 @@ import java.util.List;
 @Log4j2
 public class ClientRepositoryImpl implements ClientRepository {
 
+    // Autowiring bean.
+
     private SessionFactory sessionFactory;
 
     public ClientRepositoryImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
+
+    // Method for finding all clients.
 
     @Override
     public List<Client> findAll() {
@@ -29,6 +33,8 @@ public class ClientRepositoryImpl implements ClientRepository {
         }
     }
 
+    // Method for finding client by id.
+
     @Override
     public Client findById(Long key) {
         try(Session session = sessionFactory.openSession()) {
@@ -36,6 +42,7 @@ public class ClientRepositoryImpl implements ClientRepository {
         }
     }
 
+    // Method for creating a client.
 
     @Override
     public Client save(Client object) {
@@ -44,6 +51,8 @@ public class ClientRepositoryImpl implements ClientRepository {
             return object;
         }
     }
+
+    // Method for updating a client.
 
     @Override
     public Client update(Client object) {
@@ -56,6 +65,8 @@ public class ClientRepositoryImpl implements ClientRepository {
             return object;
         }
     }
+
+    // Method for deleting a client.
 
     @Override
     public Long delete(Client object) {

@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Set;
 
+// A class to use as a request in the Clientcontroller.
+
 @Data
 public class ClientCreateRequest {
 

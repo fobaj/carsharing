@@ -7,6 +7,8 @@ import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.Set;
 
+// A class to use as a request in the Carcontroller.
+
 @Data
 public class CarCreateRequest {
 

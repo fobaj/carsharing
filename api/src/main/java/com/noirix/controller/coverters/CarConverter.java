@@ -7,6 +7,8 @@ import org.springframework.core.convert.converter.Converter;
 
 import java.sql.Timestamp;
 
+// Abstract class for using converters.
+
 public abstract class CarConverter<S, T> implements Converter<S, T> {
 
     protected Car doConvert(Car car, CarCreateRequest carCreateRequest) {

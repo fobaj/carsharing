@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
+// Configuration for public access into Swagger API.
+
 @RequiredArgsConstructor
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -37,7 +39,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     }
 
-    //For swagger access only
+    // For swagger access only.
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()

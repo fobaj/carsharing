@@ -5,6 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+// Mapping entity transfer for transfer's table in database.
+
 @Data
 @Entity
 @Table(name = "c_transfers")

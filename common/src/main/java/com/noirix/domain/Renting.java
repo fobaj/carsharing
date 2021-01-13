@@ -7,6 +7,8 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
+// Mapping entity renting for renting's table in database.
+
 @Data
 @Entity
 @EqualsAndHashCode(exclude = {

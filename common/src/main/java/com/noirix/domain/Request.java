@@ -7,6 +7,8 @@ import javax.persistence.*;
 
 import java.sql.Timestamp;
 
+// Mapping entity request for request's table in database.
+
 @Data
 @Entity
 @Table(name = "c_requests")

@@ -14,11 +14,16 @@ import java.util.List;
 @Log4j2
 public class RentingRepositoryImpl implements RentingRepository {
 
+    // Autowiring bean.
+
     private SessionFactory sessionFactory;
 
     public RentingRepositoryImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+
+
+    // Method for finding all rentings.
 
     @Override
     public List<Renting> findAll() {
@@ -28,12 +33,16 @@ public class RentingRepositoryImpl implements RentingRepository {
         }
     }
 
+    // Method for finding renting by id.
+
     @Override
     public Renting findById(Long key) {
         try(Session session = sessionFactory.openSession()) {
             return session.find(Renting.class, key);
         }
     }
+
+    // Method for creating a renting.
 
     @Override
     public Renting save(Renting object) {
@@ -42,6 +51,8 @@ public class RentingRepositoryImpl implements RentingRepository {
             return object;
         }
     }
+
+    // Method for updating a renting.
 
     @Override
     public Renting update(Renting object) {
@@ -54,6 +65,8 @@ public class RentingRepositoryImpl implements RentingRepository {
             return object;
         }
     }
+
+    // Method for deleting a renting.
 
     @Override
     public Long delete(Renting object) {

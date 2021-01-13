@@ -9,6 +9,8 @@ import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.Set;
 
+// Mapping entity car for car's table in database.
+
 @Data
 @Entity
 @EqualsAndHashCode(exclude = {

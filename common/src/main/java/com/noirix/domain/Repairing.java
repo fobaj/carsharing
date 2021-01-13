@@ -5,6 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+// Mapping entity repairing for repairing's table in database.
+
 @Data
 @Entity
 @Table(name = "c_repairing")

@@ -18,9 +18,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CarController {
 
+        // Autowiring beans.
+
         public final CarRepository carRepository;
 
         public final ConversionService conversionService;
+
+
+        // Method for finding all cars.
 
 
         @ApiOperation(value = "Finding all cars")
@@ -33,6 +38,8 @@ public class CarController {
             return new ResponseEntity<>(carRepository.findAll(), HttpStatus.OK);
         }
 
+
+        // Method for finding car by id.
 
         @ApiOperation(value = "Finding car by id")
         @ApiResponses({
@@ -50,6 +57,8 @@ public class CarController {
         }
 
 
+        // Method for creating a car.
+
         @ApiOperation(value = "Create car")
         @ApiResponses({
             @ApiResponse(code = 201, message = "Successful creation car"),
@@ -65,6 +74,8 @@ public class CarController {
             return carRepository.save(car);
         }
 
+
+        // Method for updating a car.
 
         @ApiOperation(value = "Update car")
         @ApiResponses({
@@ -94,6 +105,8 @@ public class CarController {
         }
 
 
+        // Second method for updating a car.
+
         @ApiOperation(value = "Update2 car")
         @ApiResponses({
             @ApiResponse(code = 201, message = "Successful updating car"),
@@ -121,6 +134,7 @@ public class CarController {
             return carRepository.update(car);
         }
 
+        // Method for deleting a car.
 
         @ApiOperation(value = "Deleting car by id")
         @ApiResponses({

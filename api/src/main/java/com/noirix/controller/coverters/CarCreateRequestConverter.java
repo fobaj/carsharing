@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import java.sql.Timestamp;
 import java.util.Collections;
 
+// An additional class for using converters.
+
 @Component
 public class CarCreateRequestConverter extends CarConverter<CarCreateRequest, Car> {
 

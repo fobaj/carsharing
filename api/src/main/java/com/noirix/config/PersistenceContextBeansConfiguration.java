@@ -7,6 +7,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+// Configuration for PersistenceContext.
+
 public class PersistenceContextBeansConfiguration {
 
     @Bean(name = "sessionFactory")

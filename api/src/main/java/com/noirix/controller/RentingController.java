@@ -18,7 +18,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RentingController {
 
+    // Autowiring bean.
+
     public final RentingRepository rentingRepository;
+
+
+    // Method for finding all rentings.
 
     @ApiOperation(value = "Finding all rentings")
     @ApiResponses({
@@ -30,6 +35,8 @@ public class RentingController {
         return new ResponseEntity<>(rentingRepository.findAll(), HttpStatus.OK);
     }
 
+
+    // Method for finding renting by id.
 
     @ApiOperation(value = "Finding renting by id")
     @ApiResponses({
@@ -47,6 +54,8 @@ public class RentingController {
         return rentingRepository.findById(id);
     }
 
+
+    // Method for creating a renting.
 
     @ApiOperation(value = "Create renting")
     @ApiResponses({
@@ -81,6 +90,8 @@ public class RentingController {
     }
 
 
+    // Method for updating a renting.
+
     @ApiOperation(value = "Update renting")
     @ApiResponses({
             @ApiResponse(code = 201, message = "Successful updating renting"),
@@ -102,6 +113,8 @@ public class RentingController {
     }
 
 
+    // Second method for updating a renting.
+
     @ApiOperation(value = "Update2 renting")
     @ApiResponses({
             @ApiResponse(code = 201, message = "Successful updating renting"),
@@ -122,6 +135,7 @@ public class RentingController {
         return rentingRepository.update(renting);
     }
 
+    // Method for deleting a renting.
 
     @ApiOperation(value = "Deleting renting by id")
     @ApiResponses({

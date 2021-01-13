@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+// Starter file by Spring Boot.
+
 @SpringBootApplication(scanBasePackages = "com.noirix")
 @EnableSwagger2
 @Import({

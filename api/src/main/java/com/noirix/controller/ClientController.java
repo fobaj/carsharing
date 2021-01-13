@@ -19,8 +19,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClientController {
 
+    // Autowiring bean.
+
     public final ClientRepository clientRepository;
 
+
+    // Method for finding all clients.
 
     @ApiOperation(value = "Finding all clients")
     @ApiResponses({
@@ -32,6 +36,8 @@ public class ClientController {
         return new ResponseEntity<>(clientRepository.findAll(), HttpStatus.OK);
     }
 
+
+    // Method for finding client by id.
 
     @ApiOperation(value = "Finding client by id")
     @ApiResponses({
@@ -49,6 +55,8 @@ public class ClientController {
         return clientRepository.findById(id);
     }
 
+
+    // Method for creating a client.
 
     @ApiOperation(value = "Create client")
     @ApiResponses({
@@ -87,6 +95,8 @@ public class ClientController {
     }
 
 
+    // Method for updating a client.
+
     @ApiOperation(value = "Update client")
     @ApiResponses({
             @ApiResponse(code = 201, message = "Successful updating client"),
@@ -117,6 +127,8 @@ public class ClientController {
     }
 
 
+    // Second method for updating a client.
+
     @ApiOperation(value = "Update2 client")
     @ApiResponses({
             @ApiResponse(code = 201, message = "Successful updating client"),
@@ -146,6 +158,8 @@ public class ClientController {
         return clientRepository.update(client);
     }
 
+
+    // Method for deleting a client.
 
     @ApiOperation(value = "Deleting client by id")
     @ApiResponses({

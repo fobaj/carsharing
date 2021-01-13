@@ -10,6 +10,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Set;
 
+// Mapping entity client for client's table in database.
+
 @Data
 @Entity
 @EqualsAndHashCode(exclude = {

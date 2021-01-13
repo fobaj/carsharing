@@ -14,12 +14,15 @@ import java.util.List;
 @Log4j2
 public class CarRepositoryImpl implements CarRepository {
 
+    // Autowiring bean.
+
     private SessionFactory sessionFactory;
 
     public CarRepositoryImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
+    // Method for finding all cars.
 
     @Override
     public List<Car> findAll() {
@@ -29,12 +32,16 @@ public class CarRepositoryImpl implements CarRepository {
         }
     }
 
+    // Method for finding car by id.
+
     @Override
     public Car findById(Long key) {
         try(Session session = sessionFactory.openSession()) {
             return session.find(Car.class, key);
         }
     }
+
+    // Method for creating a car.
 
     @Override
     public Car save(Car object) {
@@ -43,6 +50,8 @@ public class CarRepositoryImpl implements CarRepository {
             return object;
         }
     }
+
+    // Method for updating a car.
 
     @Override
     public Car update(Car object) {
@@ -55,6 +64,8 @@ public class CarRepositoryImpl implements CarRepository {
             return object;
         }
     }
+
+    // Method for deleting a car.
 
     @Override
     public Long delete(Car object) {
