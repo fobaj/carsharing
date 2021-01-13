@@ -2,16 +2,15 @@ package com.noirix.controller;
 
 import com.noirix.controller.request.*;
 import com.noirix.domain.Car;
-import com.noirix.domain.Request;
 import com.noirix.repository.CarRepository;
 import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -20,6 +19,8 @@ import java.util.List;
 public class CarController {
 
         public final CarRepository carRepository;
+
+        public final ConversionService conversionService;
 
 
         @ApiOperation(value = "Finding all cars")
@@ -59,25 +60,7 @@ public class CarController {
         @ResponseStatus(HttpStatus.CREATED)
         public Car savingCar(@RequestBody CarCreateRequest carCreateRequest) {
 
-            Car car = new Car();
-            car.setBrand(carCreateRequest.getBrand());
-            car.setModel(carCreateRequest.getModel());
-            car.setYearOfIssue(carCreateRequest.getYearOfIssue());
-            car.setColor(carCreateRequest.getColor());
-            car.setVin(carCreateRequest.getVin());
-            car.setRegistrationPlate(carCreateRequest.getRegistrationPlate());
-            car.setNumberOfSeats(carCreateRequest.getNumberOfSeats());
-            car.setRate(carCreateRequest.getRate());
-            car.setCreated(new Timestamp(System.currentTimeMillis()));
-            car.setChanged(new Timestamp(System.currentTimeMillis()));
-            car.setIsDeleted(carCreateRequest.getIsDeleted());
-
-            Request request = new Request();
-            request.setStartDateAndTime(new Timestamp(System.currentTimeMillis()));
-            request.setEndDateAndTime(new Timestamp(System.currentTimeMillis()));
-
-            car.setRequests(Collections.singleton(new Request(car, request.getStartDateAndTime(),
-                    request.getEndDateAndTime())));
+            Car car = conversionService.convert(carCreateRequest, Car.class);
 
             return carRepository.save(car);
         }
