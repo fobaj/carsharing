@@ -1,0 +1,19 @@
+spring:
+  flyway:
+    enabled: true
+    ignore-missing-migrations: true
+    locations: classpath:/migration
+    baseline-on-migrate: true
+    baseline-description: Flyway Scripts
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  datasource:
+    hikari:
+      jdbc-url: "jdbc:postgresql://localhost:5432/project_carsharing?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+      maximum-pool-size: 10
+      driver-class-name: org.postgresql.Driver
+    username: test
+    password: test
+    url: "jdbc:postgresql://localhost:5432/project_carsharing?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+    driver-class-name: org.postgresql.Driver
