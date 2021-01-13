@@ -82,6 +82,7 @@ public class ClientController {
 
         client.setRepairings(Collections.singleton(new Repairing(client, repairing.getDamage(), repairing.getCost())));
 
+
         return clientRepository.save(client);
     }
 
