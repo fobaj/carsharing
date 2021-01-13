@@ -123,6 +123,16 @@ public class RentingController {
     }
 
 
+    @ApiOperation(value = "Deleting renting by id")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Successful deleting renting"),
+            @ApiResponse(code = 500, message = "Server error, something wrong")
+    })
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "Renting database id", example = "7", required = true, dataType =
+                    "long"
+                    , paramType = "path")
+    })
     @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public Long deleteRenting(@PathVariable Long id) {

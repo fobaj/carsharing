@@ -146,6 +146,16 @@ public class ClientController {
     }
 
 
+    @ApiOperation(value = "Deleting client by id")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Successful deleting client"),
+            @ApiResponse(code = 500, message = "Server error, something wrong")
+    })
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "Client database id", example = "7", required = true, dataType =
+                    "long"
+                    , paramType = "path")
+    })
     @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public Long deleteClient(@PathVariable Long id) {
