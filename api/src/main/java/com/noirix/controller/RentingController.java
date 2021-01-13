@@ -107,7 +107,7 @@ public class RentingController {
         renting.setCost(rentingCreateRequest.getCost());
         renting.setChanged(new Timestamp(System.currentTimeMillis()));
         renting.setIsDeleted(rentingCreateRequest.getIsDeleted());
-        renting.setTransfer(rentingCreateRequest.getTransfer());
+        renting.setTransfer(renting.getTransfer());
 
         return rentingRepository.update(renting);
     }
@@ -130,7 +130,7 @@ public class RentingController {
         renting.setCost(rentingChangeRequest.getCost());
         renting.setChanged(new Timestamp(System.currentTimeMillis()));
         renting.setIsDeleted(rentingChangeRequest.getIsDeleted());
-        renting.setTransfer(rentingChangeRequest.getTransfer());
+        renting.setTransfer(renting.getTransfer());
 
         return rentingRepository.update(renting);
     }
